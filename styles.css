@@ -1,0 +1,200 @@
+@import url('https://fonts.googleapis.com/css?family=Press+Start+2P&display=swap');
+
+:root {
+  --main: #eee;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+html {
+  font-size: 62.5%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Press Start 2P', sans-serif;
+  line-height: 1.4;
+  color: #eee;
+  background-color: #222;
+  /* background-color: #60b347; */
+}
+
+/* LAYOUT */
+header {
+  position: relative;
+  height: 35vh;
+  border-bottom: 7px solid #eee;
+}
+
+main {
+  height: 65vh;
+  color: #eee;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.win {
+  position: absolute;
+  background-color: #69c54d;
+  top: 0;
+  left: 0;
+}
+
+.left {
+  width: 52rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.right {
+  width: 52rem;
+  font-size: 2rem;
+}
+
+h1 {
+  font-size: 4rem;
+  text-align: center;
+  position: absolute;
+  width: 100%;
+  top: 35%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+input {
+  border: none;
+  overflow: hidden;
+}
+
+.number {
+  background: var(--main);
+  box-shadow: 0 0 3px 3px var(--main), 0 0 20px var(--main);
+  color: #333;
+  font-size: 6rem;
+  width: 15rem;
+  padding: 3rem 0rem;
+  text-align: center;
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translate(-50%, 50%);
+}
+
+.number::before {
+  content: '';
+  /* display: none; */
+  background-color: var(--main);
+  position: absolute;
+  width: 23rem;
+  height: 1rem;
+  top: 18rem;
+  right: -3.7rem;
+  transform: perspective(1rem) rotateX(6deg);
+  filter: blur(1.6rem);
+}
+
+.between {
+  font-size: 1.4rem;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+}
+
+.again {
+  position: absolute;
+  top: 2rem;
+  left: 2rem;
+}
+
+.guess {
+  background-color: none;
+  border: 4px solid #eee;
+  font-family: inherit;
+  color: #333;
+  font-size: 5rem;
+  padding: 2.5rem;
+  width: 25rem;
+  text-align: center;
+  display: block;
+  margin-bottom: 3rem;
+  overflow: hidden;
+}
+
+.btn {
+  background-color: #eee;
+  border: none;
+  color: #222;
+  font-size: 2rem;
+  font-family: inherit;
+  padding: 2rem 3rem;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.btn:hover {
+  background-color: #ccc;
+}
+
+.message {
+  margin-bottom: 8rem;
+  height: 3rem;
+}
+
+.message-wrong {
+  animation: shake 1s ease forwards;
+}
+
+@keyframes shake {
+  0% {
+    transform: translateX(0);
+  }
+  5% {
+    transform: translateX(0.5rem);
+  }
+  10% {
+    transform: translateX(-0.5rem);
+  }
+  15% {
+    transform: translateX(1rem);
+  }
+  20% {
+    transform: translateX(-1rem);
+  }
+  25% {
+    transform: translateX(0.5rem);
+  }
+  30% {
+    transform: translateX(-0.3rem);
+  }
+  35%,
+  100% {
+    transform: translateX(0);
+  }
+}
+
+.label-score {
+  margin-bottom: 2rem;
+}
+
+.reload,
+.btn {
+  border: none;
+  padding: 1.5rem 2rem;
+  margin-top: 2rem;
+  font-family: 'Press Start 2P';
+  background-color: #ccc;
+}
+.reload:hover {
+  background-color: #ffffff;
+  cursor: pointer;
+}
+.reload:active {
+  cursor: pointer;
+  transform: scale(0.9);
+}
